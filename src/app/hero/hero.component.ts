@@ -1,5 +1,5 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'jsh-hero',
@@ -7,15 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  public hero:Hero;
+  @Input() hero:Hero;
   constructor() { }
 
   ngOnInit() {
-    this.hero = new Hero(
-      'Batman',
-      'Bruce Wayne',
-      'Bla bla bla despre Batman',
-      'assets/batman.jpg'
-    );
   }
 }
