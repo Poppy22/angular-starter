@@ -1,3 +1,4 @@
+import { Hero } from '../hero';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,14 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-  public name = "Andrei";
-
-  sayHello() {
-      alert('Hello ' + this.name);
-  }
-
+  public hero:Hero;
   constructor() { }
 
   ngOnInit() {
+    this.hero = new Hero(
+      'Batman',
+      'Bruce Wayne',
+      'Bla bla bla despre Batman',
+      'assets/batman.jpg'
+    );
   }
 }
