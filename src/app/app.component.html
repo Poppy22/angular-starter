@@ -1,2 +1,6 @@
-<jsh-hero-list></jsh-hero-list>
+<h2>Angular super heroes</h2>
+<div class="heros-app">
+  <jsh-hero-list (heroSelected)="setEditHero($event)"></jsh-hero-list>
+  <jsh-edit-hero *ngIf="selectedHeroForEdit"></jsh-edit-hero>
+</div>
 

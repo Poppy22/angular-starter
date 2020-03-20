@@ -1,0 +1,9 @@
+input {
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.edit-hero {
+  margin: 0 32px 0 16px;
+}

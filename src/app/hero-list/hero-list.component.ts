@@ -1,6 +1,6 @@
 
 import { Hero } from '../hero';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HeroService } from '../hero.service';
 
 @Component({
@@ -13,6 +13,8 @@ export class HeroListComponent implements OnInit {
 
   public heros: Hero[] = [];
 
+  @Output() heroSelected = new EventEmitter();
+
   changeUniverse(newUniverse) {
     this.selectedUniverse = newUniverse;
   }
@@ -24,4 +26,7 @@ export class HeroListComponent implements OnInit {
     this.heros = this.heroService.heros;
   }
 
+  editHandler(id) {
+  this.heroSelected.emit(id);
+}
 }
